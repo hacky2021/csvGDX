@@ -19,6 +19,8 @@ f.setCell("A2","123")
 </code>
 </pre>
 2:숫자로 불러옴니다.
+<pre>
+<code>
 from csvGDX import *
 f = copen(파일 경로, 1)
 f.setCell("0:1","123")
