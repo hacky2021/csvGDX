@@ -25,7 +25,7 @@ f.setCell("A2","123")
 <pre>
 <code>
 from csvGDX import *
-f = copen(파일 경로, 1)
+f = copen(파일 경로, 2)
 f.setCell("0:1","123")
 </code>
 </pre>
