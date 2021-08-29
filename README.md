@@ -30,6 +30,15 @@ f.setCell("0:1","123")
 </code>
 </pre>
 
+3:배열로 불러옵니다.
+<pre>
+<code>
+from csvGDX import *
+f = copen(파일 경로, 2)
+f.setCell([0,1],"123")
+</code>
+</pre>
+
 ## 2. 셀 수정
 <pre>
 <code>
@@ -90,5 +99,14 @@ f.shrCell(나눌 셀 위치1, 나눌 셀 위치2, 값을 저장할 셀 위치)
 from csvGDX import *
 f = copen(파일 경로, 입력 형식)
 f.save()
+</code>
+</pre>
+
+## 9. 파일 크기 불러오기
+<pre>
+<code>
+from csvGDX import *
+f = copen(파일 경로, 입력 형식)
+size = f.getSize()
 </code>
 </pre>
