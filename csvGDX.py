@@ -1,12 +1,12 @@
 #-------------------------------------------------------------------------
 #-------------------------------------------------------------------------
-#-----***************************************************************-----
-#-----*************************Version:1.0.0*************************-----
-#-----*********************Creation_Date:21/8/20*********************-----
-#-----**********************CreatedDate:21/8/21**********************-----
-#-----***********************creator:hacky2021***********************-----
-#-----*****************https://github.com/hacky2021/*****************-----
-#-----***************************************************************-----
+#----*****************************************************************----
+#----**************************Version:1.1.0**************************----
+#----**********************Creation_Date:21/8/20**********************----
+#----***********************CreatedDate:21/8/29***********************----
+#----************************creator:hacky2021************************----
+#----******************https://github.com/hacky2021/******************----
+#----*****************************************************************----
 #-------------------------------------------------------------------------
 #-------------------------------------------------------------------------
 import re
@@ -29,6 +29,10 @@ class copen:
             self.items1=[0,0]
             self.items1[0]=int(c1[:c1.find(":")])
             self.items1[1]=int(c1[c1.find(":")+1:len(c1)])
+        elif self.mode==3:
+            self.items1=[0,0]
+            self.items1[0]=c1[0]
+            self.items1[1]=c1[1]
         self.fileList[self.items1[1]][self.items1[0]]=str(c2)
     def getCell(self,c1):
         if self.mode==1:
@@ -40,7 +44,13 @@ class copen:
             self.items1=[0,0]
             self.items1[0]=int(c1[:c1.find(":")])
             self.items1[1]=int(c1[c1.find(":")+1:len(c1)])
+        elif self.mode==3:
+            self.items1=[0,0]
+            self.items1[0]=c1[0]
+            self.items1[1]=c1[1]
         return self.fileList[self.items1[1]][self.items1[0]]
+    def getSize(self):
+        return (len(self.fileList),len(self.fileList[0]))
     def addCell(self,c1,c2,c3):
         if self.mode==1:
             self.itemsT=re.match(r"([A-Z]+)([0-9]+)",c1.upper(), re.I).groups()
@@ -65,6 +75,16 @@ class copen:
             self.items3=[0,0]
             self.items3[0]=int(c3[:c3.find(":")])
             self.items3[1]=int(c3[c3.find(":")+1:len(c3)])
+        elif self.mode==3:
+            self.items1=[0,0]
+            self.items1[0]=c1[0]
+            self.items1[1]=c1[1]
+            self.items2=[0,0]
+            self.items2[0]=c2[0]
+            self.items2[1]=c2[1]
+            self.items3=[0,0]
+            self.items3[0]=c3[0]
+            self.items3[1]=c3[1]
         self.fileList[self.items3[1]][self.items3[0]]=str(int(self.fileList[self.items1[1]][self.items1[0]])+int(self.fileList[self.items2[1]][self.items2[0]]))
     def subCell(self,c1,c2,c3):
         if self.mode==1:
@@ -90,6 +110,16 @@ class copen:
             self.items3=[0,0]
             self.items3[0]=int(c3[:c3.find(":")])
             self.items3[1]=int(c3[c3.find(":")+1:len(c3)])
+        elif self.mode==3:
+            self.items1=[0,0]
+            self.items1[0]=c1[0]
+            self.items1[1]=c1[1]
+            self.items2=[0,0]
+            self.items2[0]=c2[0]
+            self.items2[1]=c2[1]
+            self.items3=[0,0]
+            self.items3[0]=c3[0]
+            self.items3[1]=c3[1]
         self.fileList[self.items3[1]][self.items3[0]]=str(int(self.fileList[self.items1[1]][self.items1[0]])-int(self.fileList[self.items2[1]][self.items2[0]]))
     def mulCell(self,c1,c2,c3):
         if self.mode==1:
@@ -115,6 +145,16 @@ class copen:
             self.items3=[0,0]
             self.items3[0]=int(c3[:c3.find(":")])
             self.items3[1]=int(c3[c3.find(":")+1:len(c3)])
+        elif self.mode==3:
+            self.items1=[0,0]
+            self.items1[0]=c1[0]
+            self.items1[1]=c1[1]
+            self.items2=[0,0]
+            self.items2[0]=c2[0]
+            self.items2[1]=c2[1]
+            self.items3=[0,0]
+            self.items3[0]=c3[0]
+            self.items3[1]=c3[1]
         self.fileList[self.items3[1]][self.items3[0]]=str(int(self.fileList[self.items1[1]][self.items1[0]])*int(self.fileList[self.items2[1]][self.items2[0]]))
     def shrCell(self,c1,c2,c3):
         if self.mode==1:
@@ -140,6 +180,16 @@ class copen:
             self.items3=[0,0]
             self.items3[0]=int(c3[:c3.find(":")])
             self.items3[1]=int(c3[c3.find(":")+1:len(c3)])
+        elif self.mode==3:
+            self.items1=[0,0]
+            self.items1[0]=c1[0]
+            self.items1[1]=c1[1]
+            self.items2=[0,0]
+            self.items2[0]=c2[0]
+            self.items2[1]=c2[1]
+            self.items3=[0,0]
+            self.items3[0]=c3[0]
+            self.items3[1]=c3[1]
         self.fileList[self.items3[1]][self.items3[0]]=str(int(self.fileList[self.items1[1]][self.items1[0]])/int(self.fileList[self.items2[1]][self.items2[0]]))
     def save(self):
         self.fileSF=""
