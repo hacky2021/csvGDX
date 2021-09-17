@@ -110,3 +110,12 @@ f = copen(파일 경로, 입력 형식)
 size = f.getSize()
 </code>
 </pre>
+
+## 10. 특정 줄 크기 불러오기
+<pre>
+<code>
+from csvGDX import *
+f = copen(파일 경로, 입력 형식)
+size = f.getHeatSize(줄 번호)
+</code>
+</pre>
